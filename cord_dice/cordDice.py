@@ -5,15 +5,15 @@ This module is for using Dice in discord
 import random
 from cord_dice import cordDiceUtil
 from cord_dice import cordDiceUI
+from cord_util import log
 
 aliases = cordDiceUtil.aliases
 
+TAG = "cordDice"
+
 def diceRoll(*diceNum):
-    print(len(diceNum))
     if len(diceNum) == 1:
-        print(diceNum[0], type(diceNum[0]))
         if diceNum[0] <= 0:
-            print("fuck")
             return cordDiceUtil.ERROR_ONE_INVALID_ARGUMENT
         n = random.randrange(1, diceNum[0] + 1)
     else:
@@ -45,9 +45,11 @@ def process(vars):
         except:
             pass
     
-    print(errorCode)
+    log.i(TAG, errorCode)
 
     return diceEmbedding(errorCode)
+
+
 
 def diceEmbedding(errorCode):
     match(errorCode):
