@@ -165,3 +165,7 @@ api_key.txt
 
 # legacy codes
 legacy_*
+
+# private commands
+cord_command_etc
+cordCommandEtc.py
